@@ -1,0 +1,25 @@
+{
+  "name": "codeschool_address_book_2022",
+  "version": "1.0.0",
+  "description": "Address book",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jhutchings99/codeschool_address_book_2022.git"
+  },
+  "author": "Jeremy Hutchings",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jhutchings99/codeschool_address_book_2022/issues"
+  },
+  "homepage": "https://github.com/jhutchings99/codeschool_address_book_2022#readme",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "mongodb": "^4.7.0"
+  }
+}
