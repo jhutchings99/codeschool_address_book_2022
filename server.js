@@ -16,7 +16,11 @@ app.get("/addressbook/:id", (req, res) => {
 
 // get all address books
 app.get("/addressbooks", (req, res) => {
-    res.send("get all address books");
+    addressBook.find().then((addressBook) => {
+        res.json(addressBook);
+    }).catch((err) => {
+        res.status(500).json(err);
+    });
 });
 
 // create address book
