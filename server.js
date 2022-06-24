@@ -54,6 +54,20 @@ app.put("/addressbook/:id", (req, res) => {
     });
 });
 
+// patch address book
+app.patch("/addressbook/:id", (req, res) => {
+    const validatedAddressBook = helpers.setupAddressBook(req.body);
+    addressBook.findByIdAndUpdate(req.params.id, validatedAddressBook, {returnDocument: "after"}).then((addressBook) => {
+        if (addressBook == null) {
+            res.status(404).json({"message": "not found"});
+            return;
+        }
+        res.json(addressBook);
+    }).catch((err) => {
+        res.status(500).json(err);
+    });
+});
+
 // delete address book
 app.delete("/addressbook/:id", (req, res) => {
     res.send("delete address book");
