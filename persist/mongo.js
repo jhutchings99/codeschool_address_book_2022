@@ -30,3 +30,8 @@ function setUpConnectionHandlers(callback) {
         console.log("Error Connecting to MongoDB");
     });
 }
+
+module.exports = {
+    connect,
+    setUpConnectionHandlers,
+}
