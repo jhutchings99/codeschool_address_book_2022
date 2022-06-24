@@ -1,4 +1,4 @@
-// Create address book schema
+// Pull in mongoose
 const mongoose = require('mongoose');
 
 // Set up address book schema
@@ -10,6 +10,6 @@ const addressBookSchema =  mongoose.Schema({
     address: {type: String, default: ""},
 });
 
-const addressBook = mongoose.model("AddressBook", addressBookSchema);
+const addressBook = mongoose.model("addressBook", addressBookSchema);
 
 module.exports = addressBook;
