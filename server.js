@@ -11,7 +11,13 @@ const helpers = require("./helper");
 // Stub out the methods
 // get address book by id
 app.get("/addressbook/:id", (req, res) => {
-    res.send("get address book by id");
+    addressBook.findById(req.params.id).then((addressBook) => {
+        if (addressBook == null) {
+            res.status(404).json({"message": "not found"});
+            return;
+        }
+        res.json(addressBook);
+    });
 });
 
 // get all address books
