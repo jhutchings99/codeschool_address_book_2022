@@ -42,7 +42,16 @@ app.post("/addressbook", (req, res) => {
 
 // update address book
 app.put("/addressbook/:id", (req, res) => {
-    res.send("update address book");
+    const validatedAddressBook = helpers.setupAddressBook(req.body);
+    addressBook.findByIdAndUpdate(req.params.id, validatedAddressBook, {returnDocument: "after"}).then((addressBook) => {
+        if (addressBook == null) {
+            res.status(404).json({"message": "not found"});
+            return;
+        }
+        res.json(addressBook);
+    }).catch((err) => {
+        res.status(500).json(err);
+    });
 });
 
 // delete address book
