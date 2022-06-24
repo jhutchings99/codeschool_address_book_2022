@@ -70,7 +70,15 @@ app.patch("/addressbook/:id", (req, res) => {
 
 // delete address book
 app.delete("/addressbook/:id", (req, res) => {
-    res.send("delete address book");
+    addressBook.findByIdAndDelete(req.params.id).then((addressBook) => {
+        if (addressBook == null) {
+            res.status(404).json({"message": "not found"});
+            return;
+        }
+        res.json(addressBook);
+    }).catch((err) => {
+        res.status(500).json(err);
+    });
 });
 
 module.exports = app;
