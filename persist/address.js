@@ -10,6 +10,6 @@ const addressBookSchema =  mongoose.Schema({
     address: {type: String, default: ""},
 });
 
-const addressBook = mongoose.model("addressBook", addressBookSchema);
+const addressBook = mongoose.model("addressbooks", addressBookSchema);
 
 module.exports = addressBook;
