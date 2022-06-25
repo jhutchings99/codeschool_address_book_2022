@@ -10,6 +10,9 @@ var app = new Vue({
         emailInput: "",
         phoneNumberInput: "",
         addressInput: "",
+
+        editingIndex: -1,
+        editingAddressCopy: {},
     },
     methods: {
         // Add a new address
@@ -66,6 +69,28 @@ var app = new Vue({
                     this.getAddressBooks();
                 });
             });
+        },
+
+        // Edit address book
+        editAddressBook: function(addressBook, addressIndex) {
+            this.editingIndex = addressIndex;
+            this.editingAddressCopy = {...addressBook};
+        },
+
+        // Update address book
+        putAddressBook: function(addressBook) {
+            fetch(url + "/addressbook/" + addressBook._id, {
+                method: "PUT",
+                body: JSON.stringify(this.editingAddressCopy),
+                headers: {
+                    "Content-Type": "application/json"
+                },
+            }).then(response => {
+                response.json().then(updatedAddress => {
+                    this.getAddressBooks();
+                });
+            });
+            this.editAddressBook({}, -1);
         }
     },
     created: function() {

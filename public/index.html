@@ -26,13 +26,26 @@
             </div>
             <div id="address-area" v-for="(address, index) in addresses">
                 <span class="address-info">First Name: {{ address.firstName }}</span>
+                <input type="text" class="first-name-input-edit" v-model="editingAddressCopy.firstName" v-if="editingIndex == index">
+
                 <span class="address-info">Last Name: {{ address.lastName }}</span>
+                <input type="text" class="last-name-input-edit" v-model="editingAddressCopy.lastName" v-if="editingIndex == index">
+
                 <span class="address-info">Email: {{ address.email }}</span>
+                <input type="text" class="email-input-edit" v-model="editingAddressCopy.email" v-if="editingIndex == index">
+
                 <span class="address-info">Phone Number: {{ address.phoneNumber }}</span>
+                <input type="text" class="phone-number-input-edit" v-model="editingAddressCopy.phoneNumber" v-if="editingIndex == index">
+
                 <span class="address-info">Address: {{ address.address }}</span>
+                <input type="text" class="address-input-edit" v-model="editingAddressCopy.address" v-if="editingIndex == index">
+
                 <div class="buttons">
-                    <button id="edit-button" @click="editAddress()">Edit</button>
+                    <button id="edit-button" @click="editAddressBook(address, index)" v-if="editingIndex != index">Edit</button>
+                    <button id="edit-button" @click="editAddressBook({}, -1)" v-if="editingIndex == index">Cancel</button>
+                    <button id="edit-button" @click="putAddressBook(address)" v-if="editingIndex == index">Submit</button>
                     <button id="delete-button" @click="deleteAddressBook(address)">Delete</button>
+
                 </div>
             </div>
         </div>
