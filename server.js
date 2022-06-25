@@ -2,6 +2,12 @@
 const express = require("express");
 const app = express();
 app.use(express.json());
+app.use(express.static('public'));
+
+// Open in browser on start
+const dotenv = require('dotenv').config();
+const opn = require("opn");
+opn(`http://localhost:${process.env.PORT}`);
 
 // Pull in schema
 const addressBook = require("./persist/address");
