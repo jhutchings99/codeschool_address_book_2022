@@ -1,0 +1,81 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Raleway', sans-serif;
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 50px auto;
+}
+
+#app h1 {
+    background-color: rgb(0, 25, 80);
+    color: white;
+    width: 80vw;
+    padding: 30px;
+    text-align: center;
+}
+
+#address-book {
+    background-color: rgb(172, 172, 172);
+    height: 1000px;
+}
+
+#input-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+    padding: 30px;
+}
+
+.address-input {
+    margin: 0px 10px;
+    background-color: rgb(226, 226, 226);
+    padding: 10px;
+    border-radius: 20px;
+    border: 2px solid transparent;
+}
+
+.address-input:hover {
+    border: 2px solid rgb(255, 0, 149);
+}
+
+#button-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+#add-address {
+    padding: 15px;
+    background-color: rgb(255, 0, 149);
+    border-radius: 50px;
+    border: none;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+#add-address:hover {
+    box-shadow: 0px 5px 0px black;
+    transition: 0.5s;
+}
+
+#address-area {
+    background-color: rgb(230, 230, 230);
+    height: auto;
+    margin: 10px;
+    padding: 10px;
+}
+.address {
+    background-color: rgb(124, 113, 150);
+    margin: 5px auto;
+    padding: 20px;
+    color: white;
+}

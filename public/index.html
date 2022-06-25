@@ -5,23 +5,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;700&display=swap" rel="stylesheet">
     <title>Address Book</title>
 </head>
 <body>
     <div id="app">
         <h1>Address Book</h1>
-        <div id="input-area">
-            <input type="text" id="first-name" class="address-input" placeholder="Enter First Name">
-            <input type="text" id="last-name" class="address-input" placeholder="Enter Last Name">
-            <input type="text" id="email" class="address-input" placeholder="Enter E-Mail">
-            <input type="text" id="phone-number" class="address-input" placeholder="Enter Phone Number">
-            <input type="text" id="address" class="address-input" placeholder="Enter Address">
-            <button id="add-address">Add Address</button>
-            <div id="address-area">
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos, assumenda!</p>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos, assumenda!</p>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos, assumenda!</p>
+        <div id="address-book">
+            <div id="input-area">
+                <input type="text" id="first-name" class="address-input" placeholder="Enter First Name">
+                <input type="text" id="last-name" class="address-input" placeholder="Enter Last Name">
+                <input type="text" id="email" class="address-input" placeholder="Enter E-Mail">
+                <input type="text" id="phone-number" class="address-input" placeholder="Enter Phone Number">
+                <input type="text" id="address" class="address-input" placeholder="Enter Address">
             </div>
+            <div id="button-container">
+                <button id="add-address">Add Address</button>
+            </div>
+            <div id="address-area">
+                <div class="address">
+                    <p>stuff</p>
+                    <p>stuff</p>
+                    <p>stuff</p>
+                </div>
+                <div class="address">
+                    <p>stuff</p>
+                    <p>stuff</p>
+                    <p>stuff</p>
+                    <p>stuff</p>
+                </div>
+                <div class="address">
+                    <p>stuff</p>
+                    <p>stuff</p>
+                    <p>stuff</p>
+                </div>
+                <div class="address">
+                    <p>stuff</p>
+                    <p>stuff</p>
+                    <p>stuff</p>
+                </div>
+            </div>
+
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
