@@ -15,39 +15,26 @@
         <h1>Address Book</h1>
         <div id="address-book">
             <div id="input-area">
-                <input type="text" id="first-name" class="address-input" placeholder="Enter First Name">
-                <input type="text" id="last-name" class="address-input" placeholder="Enter Last Name">
-                <input type="text" id="email" class="address-input" placeholder="Enter E-Mail">
-                <input type="text" id="phone-number" class="address-input" placeholder="Enter Phone Number">
-                <input type="text" id="address" class="address-input" placeholder="Enter Address">
+                <input type="text" id="first-name" class="address-input" placeholder="Enter First Name" v-model="firstNameInput">
+                <input type="text" id="last-name" class="address-input" placeholder="Enter Last Name" v-model="lastNameInput">
+                <input type="text" id="email" class="address-input" placeholder="Enter E-Mail" v-model="emailInput">
+                <input type="text" id="phone-number" class="address-input" placeholder="Enter Phone Number" v-model="phoneNumberInput">
+                <input type="text" id="address" class="address-input" placeholder="Enter Address" v-model="addressInput">
             </div>
             <div id="button-container">
-                <button id="add-address">Add Address</button>
+                <button id="add-address" @click="addAddress()">Add Address</button>
             </div>
-            <div id="address-area">
-                <div class="address">
-                    <p>stuff</p>
-                    <p>stuff</p>
-                    <p>stuff</p>
-                </div>
-                <div class="address">
-                    <p>stuff</p>
-                    <p>stuff</p>
-                    <p>stuff</p>
-                    <p>stuff</p>
-                </div>
-                <div class="address">
-                    <p>stuff</p>
-                    <p>stuff</p>
-                    <p>stuff</p>
-                </div>
-                <div class="address">
-                    <p>stuff</p>
-                    <p>stuff</p>
-                    <p>stuff</p>
+            <div id="address-area" v-for="(address, index) in addresses">
+                <span class="address-info">First Name: {{ address.firstName }}</span>
+                <span class="address-info">Last Name: {{ address.lastName }}</span>
+                <span class="address-info">Email: {{ address.email }}</span>
+                <span class="address-info">Phone Number: {{ address.phoneNumber }}</span>
+                <span class="address-info">Address: {{ address.address }}</span>
+                <div class="buttons">
+                    <button id="edit-button" @click="editAddress()">Edit</button>
+                    <button id="delete-button" @click="deleteAddressBook(address)">Delete</button>
                 </div>
             </div>
-
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>

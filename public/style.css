@@ -23,7 +23,8 @@
 
 #address-book {
     background-color: rgb(172, 172, 172);
-    height: 1000px;
+    height: 700px;
+    overflow-y: scroll;
 }
 
 #input-area {
@@ -72,10 +73,53 @@
     height: auto;
     margin: 10px;
     padding: 10px;
+    display: flex;
+    flex-direction: column;
 }
 .address {
     background-color: rgb(124, 113, 150);
     margin: 5px auto;
     padding: 20px;
     color: white;
+}
+
+.address-info {
+    padding: 5px;
+}
+
+.buttons {
+    display: flex;
+    align-items: flex-start;
+}
+
+#edit-button {
+    padding: 10px;
+    background-color: rgb(255, 0, 149);
+    border-radius: 50px;
+    border: none;
+    color: white;
+    font-size: 15px;
+    width: 100px;
+    margin: 5px;
+}
+
+#edit-button:hover {
+    box-shadow: 0px 5px 0px black;
+    transition: 0.5s;
+}
+
+#delete-button {
+    padding: 10px;
+    background-color: rgb(255, 0, 149);
+    border-radius: 50px;
+    border: none;
+    color: white;
+    font-size: 15px;
+    width: 100px;
+    margin: 5px;
+}
+
+#delete-button:hover {
+    box-shadow: 0px 5px 0px black;
+    transition: 0.5s;
 }
