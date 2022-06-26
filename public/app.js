@@ -27,6 +27,8 @@ var app = new Vue({
                 address: this.addressInput,
             };
 
+            socket.emit('address', newAddress);
+
             this.postAddressBook(newAddress);
 
             // Clear the input fields
@@ -42,6 +44,7 @@ var app = new Vue({
             fetch(url + "/addressbooks").then(response => {
                 response.json().then(data => {
                     this.addresses = data;
+                    socket.on('address', this.getAddressBooks());
                 });
             });
         },
